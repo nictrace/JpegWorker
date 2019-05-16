@@ -5,7 +5,7 @@ FortuneServer::FortuneServer(QObject *parent, int max) : QTcpServer(parent)
 {
     if(max < 1) max=1;
     qDebug() << "Max threads:" << max;
-    pool = new QThreadPool(this);
+    pool = new QThreadPool(parent);
     pool->setMaxThreadCount(max);
     setMaxPendingConnections(max);
 }
@@ -26,5 +26,4 @@ void FortuneServer::incomingConnection(qintptr socketDescriptor)
         s.close();
     }
     else qDebug() << "pool started";
-
 }

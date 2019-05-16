@@ -61,7 +61,7 @@ void Worker::run()
             p.setPen(QPen(Qt::yellow));
             p.drawText(shadow, Qt::AlignBottom | Qt::AlignHCenter, text);           // лицевой текст
 
-            jpegImage.save("tim.jpg", "jpg");   // вместо этого нужно засылать картинку
+            //jpegImage.save("tim.jpg", "jpg");   // вместо этого нужно засылать картинку
             QByteArray arr;
             QBuffer buffer(&arr);
             buffer.open(QIODevice::WriteOnly);
